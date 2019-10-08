@@ -1,6 +1,6 @@
 /** Vanessa Bracken
  * ASU ID: 1217621743
- * Assignment 1
+ * Assignment 2
  * Class that implements functions that add and subtract integers
  * @author vanessa
  *
@@ -10,54 +10,77 @@
  /**
   * Class that declares a @param called total
   * 
+  * @param history is a string buffer that will keep track of previous ops in a 
+  * string. 
+  * 
   */
 
  public class AddingMachine {
 
  	private int total;
+ 	private String history;
+ 	
+ 	/**
+ 	 * Adding Machine holds the variables that will be used in other 
+ 	 * functions.
+ 	 * 
+ 	 * @param total will include the total of all previous operations.
+ 	 * @param history will append a string describing the calculations.
+ 	 * 
+ 	 */
  	
  	public AddingMachine () {
  		total = 0;  // not needed - included for clarity
+ 		history = " 0 ";
+ 		
  	}
  	
  	/**
- 	 * no operations completed
- 	 * @return 0 
+ 	 * get Total returns the value of total
+ 	 * 
+ 	 * @return total which is the cumulative total after all the operations.
  	 */
  	
  	public int getTotal () {
- 		return 0;
+ 		
+ 		return total;
  	}
  	
  	/**
- 	 * no operations completed
+ 	 * value is added to total
  	 * 
- 	 * @param value
+ 	 * @param value is added to total
+ 	 * @param history  string equivalent of operation is added to history.
  	 * 
  	 */
  	
  	public void add (int value) {
  		
+ 		total = total + value;
+ 		history = history + " + " + value;
+ 		
  	}
  	
 	/**
- 	 * no operations completed
+ 	 * value is subtracted from total
  	 * 
- 	 * @param value
+ 	 * @param value		holds the int that will be subtracted from total
  	 * 
  	 */
  	
  	public void subtract (int value) {
  		
+ 		total = total - value;
+ 		history = history + " - " + value;
  	}
  	
  	/**
- 	 * @returns empty string
+ 	 * @returns the full operation list that was input
  	 *
  	 */
  		
  	public String toString () {
- 		return "";
+ 		return history;
  	}
 
  	public void clear() {
